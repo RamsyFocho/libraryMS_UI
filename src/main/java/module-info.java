@@ -10,6 +10,7 @@ module com.library_ms.libraryms_ui {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires jdk.jdi;
 
     opens com.library_ms.libraryms_ui to javafx.fxml;
     exports com.library_ms.libraryms_ui;
