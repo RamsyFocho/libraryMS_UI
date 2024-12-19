@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+
+<?import com.library_ms.libraryms_ui.DashboardController
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.library_ms.libraryms_ui.DashboardController">
+    <left>
+        <VBox spacing="20.0" padding="20.0" styleClass="sidebar">
+            <Button fx:id="usersButton" text="Users" />
+            <Button fx:id="booksButton" text="Books" />
+            <Button fx:id="leasedButton" text="Leased" />
+        </VBox>
+    </left>
+    <center>
+        <TabPane fx:id="contentTabPane" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab fx:id="usersTab" text="Users">
+                    <TableView fx:id="usersTable">
+                        <columns>
+                            <TableColumn fx:id="userNameColumn" text="Name" />
+                            <TableColumn fx:id="userEmailColumn" text="Email" />
+                            <TableColumn fx:id="userBorrowedColumn" text="Borrowed" />
+                        </columns>
+                    </TableView>
+                </Tab>
+                <Tab fx:id="booksTab" text="Books">
+                    <TableView fx:id="booksTable">
+                        <columns>
+                            <TableColumn fx:id="bookTitleColumn" text="Title" />
+                            <TableColumn fx:id="bookAuthorColumn" text="Author" />
+                            <TableColumn fx:id="bookAvailableColumn" text="Available" />
+                        </columns>
+                    </TableView>
+                </Tab>
+                <Tab fx:id="leasedTab" text="Leased">
+                    <TableView fx:id="leasedTable" layoutX="20.0" layoutY="20.0" prefHeight="400.0" prefWidth="760.0">
+                        <columns>
+                            <TableColumn fx:id="leasedBookColumn" text="Book" prefWidth="250.0" />
+                            <TableColumn fx:id="leasedUserColumn" text="User" prefWidth="250.0" />
+                            <TableColumn fx:id="leasedDueColumn" text="Due Date" prefWidth="250.0" />
+                        </columns>
+                    </TableView>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+</BorderPane>
