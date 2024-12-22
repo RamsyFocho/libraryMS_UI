@@ -1,10 +1,10 @@
 package com.library_ms.libraryms_ui.domain;
 
-public class category {
+public class Category {
     private int Id;
     private String Category;
 
-    public category(int id, String category) {
+    public Category(int id, String category) {
         Id = id;
         Category = category;
     }

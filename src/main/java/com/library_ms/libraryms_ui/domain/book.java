@@ -3,10 +3,10 @@ package com.library_ms.libraryms_ui.domain;
 public class book {
     private int Id;
     private String bookName;
-    private category Category;
+    private com.library_ms.libraryms_ui.domain.Category Category;
     private int quantity;
 
-    public book(int id, String bookName, category category, int quantity) {
+    public book(int id, String bookName, com.library_ms.libraryms_ui.domain.Category category, int quantity) {
         Id = id;
         this.bookName = bookName;
         Category = category;
@@ -29,11 +29,11 @@ public class book {
         this.bookName = bookName;
     }
 
-    public category getCategory() {
+    public com.library_ms.libraryms_ui.domain.Category getCategory() {
         return Category;
     }
 
-    public void setCategory(category category) {
+    public void setCategory(com.library_ms.libraryms_ui.domain.Category category) {
         Category = category;
     }
 
