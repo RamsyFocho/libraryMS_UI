@@ -5,12 +5,12 @@ import java.util.Date;
 public class lease {
     private int Id;
     private book Book;
-    private user User;
+    private com.library_ms.libraryms_ui.domain.User User;
     private Date leaseDate;
     private Date DueDate;
     private String Status;
 
-    public lease(int id, book book, user user, Date leaseDate, Date dueDate, String status) {
+    public lease(int id, book book, com.library_ms.libraryms_ui.domain.User user, Date leaseDate, Date dueDate, String status) {
         Id = id;
         Book = book;
         User = user;
@@ -35,11 +35,11 @@ public class lease {
         Book = book;
     }
 
-    public user getUser() {
+    public com.library_ms.libraryms_ui.domain.User getUser() {
         return User;
     }
 
-    public void setUser(user user) {
+    public void setUser(com.library_ms.libraryms_ui.domain.User user) {
         User = user;
     }
 
