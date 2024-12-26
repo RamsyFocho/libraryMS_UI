@@ -34,15 +34,16 @@ public class LoginFormController {
             return;
         }else{
             // Verify user credentials
-            User loginUser = new UserStorage().getRegisteredUser();
-            if(loginUser == null) {
+            boolean loginUser = UserStorage.getRegisteredUser(txtUn.getText(),txtPw.getText());
+            if(!loginUser) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Library_UI");
-                alert.setHeaderText("No registered user");
-                alert.setContentText("Please register first");
+                alert.setHeaderText("No registered user or \n Invalid Login");
+                alert.setContentText("Please register first or \n Incorrect username or password  ");
+
                 alert.showAndWait();
                 return;
-            }else if(Objects.equals(loginUser.getUsername(), txtUn.getText()) && Objects.equals(loginUser.getPassword(), txtPw.getText())){
+            }else {
                 // If valid, open the main application window
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Login Successful");
@@ -67,13 +68,6 @@ public class LoginFormController {
                     e.getCause();
                 }
 
-            }else{
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText("Invalid Login");
-                alert.setContentText("Incorrect username or password");
-                alert.showAndWait();
-                return;
             }
         }
 

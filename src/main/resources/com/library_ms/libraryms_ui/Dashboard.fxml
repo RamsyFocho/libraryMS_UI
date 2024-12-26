@@ -136,12 +136,12 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView layoutX="273.0" layoutY="48.0" prefHeight="606.0" prefWidth="744.0" style="-fx-background-color: lightgrey;" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="tableBook" layoutX="273.0" layoutY="48.0" prefHeight="606.0" prefWidth="744.0" style="-fx-background-color: lightgrey;" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <columns>
-                              <TableColumn prefWidth="75.0" text="Id" />
-                              <TableColumn prefWidth="75.0" text="Book Name" />
-                              <TableColumn prefWidth="94.0" text="CategoryID" />
-                              <TableColumn prefWidth="94.0" text="Quantity" />
+                              <TableColumn fx:id="columnBookId" prefWidth="75.0" text="Id" />
+                              <TableColumn fx:id="columnBookName" prefWidth="75.0" text="Book Name" />
+                              <TableColumn fx:id="columnBookCategoryId" prefWidth="94.0" text="CategoryID" />
+                              <TableColumn fx:id="columnQty" prefWidth="94.0" text="Quantity" />
                            </columns>
                         </TableView>
                         <Pane prefHeight="547.0" prefWidth="286.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -151,7 +151,7 @@
                                     <Font name="Century" size="20.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="32.0" layoutY="75.0" prefHeight="37.0" prefWidth="222.0" promptText="Enter the Book Name" />
+                              <TextField fx:id="txtBookName" layoutX="32.0" layoutY="75.0" prefHeight="37.0" prefWidth="222.0" promptText="Enter the Book Name" />
                               <Label layoutX="65.0" layoutY="157.0" text="Book Category">
                                  <font>
                                     <Font name="Century" size="20.0" />
@@ -163,8 +163,8 @@
                                     <Font name="Century" size="20.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="32.0" layoutY="333.0" prefHeight="37.0" prefWidth="222.0" promptText="Enter the quantity" />
-                              <Button layoutX="42.0" layoutY="422.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="203.0" style="-fx-border-radius: 53%;" text="Insert" />
+                              <TextField fx:id="txtQty" layoutX="32.0" layoutY="333.0" prefHeight="37.0" prefWidth="222.0" promptText="Enter the quantity" />
+                              <Button fx:id="btnInsertBook" layoutX="42.0" layoutY="422.0" mnemonicParsing="false" onAction="#onClickAddBook" prefHeight="43.0" prefWidth="203.0" style="-fx-border-radius: 53%;" text="Insert" />
                            </children>
                         </Pane>
                      </children>

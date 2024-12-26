@@ -38,7 +38,7 @@ public class RegisterFormController {
         }else{
             Id++;
             Staff newStaff = new Staff(Id,txtFn.getText(),txtLn.getText(),txtUn.getText() ,txtEmail.getText(),txtPw.getText());
-            new UserStorage().setRegisteredUser(newStaff);
+            new UserStorage().addRegisteredUser(newStaff);
             //show dashboard
             try{
                 Stage loginStage = new Stage();

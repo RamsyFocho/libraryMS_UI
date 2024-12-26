@@ -1,12 +1,12 @@
 package com.library_ms.libraryms_ui.domain;
 
-public class book {
+public class Book {
     private int Id;
     private String bookName;
     private com.library_ms.libraryms_ui.domain.Category Category;
     private int quantity;
 
-    public book(int id, String bookName, com.library_ms.libraryms_ui.domain.Category category, int quantity) {
+    public Book(int id, String bookName, com.library_ms.libraryms_ui.domain.Category category, int quantity) {
         Id = id;
         this.bookName = bookName;
         Category = category;
