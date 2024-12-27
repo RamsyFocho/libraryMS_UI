@@ -81,7 +81,16 @@ public class DashboardController {
         String category = txtCategory.getText();
         if (categoryId != 0 && category != null && !category.trim().isEmpty()) {
             Category newCategory = new Category(categoryId,category);
-            cs.addCategory(newCategory);
+            boolean isPresent = cs.addCategory(newCategory);
+            if (isPresent){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Library_UI");
+                alert.setHeaderText("Category already existing");
+                alert.setContentText("Please change category");
+
+                alert.showAndWait();
+                return;
+            }
             categoryData.add(new categoryValue(categoryId, category));
             txtCategory.setText("");
 //            add in the combo box

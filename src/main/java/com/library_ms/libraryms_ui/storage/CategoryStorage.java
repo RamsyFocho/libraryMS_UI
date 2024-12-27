@@ -13,7 +13,7 @@ public class CategoryStorage {
         return category;
     }
 
-    public void addCategory(Category category) {
+    public boolean addCategory(Category category) {
         boolean found = false;
         for(Category cat : this.category){
             if(cat.getCategory().equals(category.getCategory())){
@@ -28,6 +28,7 @@ public class CategoryStorage {
         if(category!=null){
             System.out.println("Category added successfully "+ category.getCategory());
         }
+        return found;
     }
     public Category findCategorybyId(int id){
         for(Category cat : category){
@@ -48,15 +49,22 @@ public class CategoryStorage {
 //    update
     public boolean updateCategory(int id,String cat){
         Category category = findCategorybyId(id);
+        boolean catFound = false;
+        boolean updated = false;
         System.out.println(id);
         if(category != null){
-            category.setCategory(cat);
-            System.out.println("Category updated successfully: " + cat);
-            return true;
+            for(Category Cat : this.category){
+                catFound= Cat.getCategory().equals(cat);
+            }
+            if(!catFound){
+                category.setCategory(cat);
+                System.out.println("Category updated successfully: " + cat);
+                updated = true;
+            }
         }
         else{
             System.out.println("category with id not found");
-            return false;
         }
+        return updated;
     }
 }
