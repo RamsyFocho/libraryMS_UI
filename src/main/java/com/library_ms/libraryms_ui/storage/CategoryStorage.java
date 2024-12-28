@@ -30,7 +30,7 @@ public class CategoryStorage {
         }
         return found;
     }
-    public Category findCategorybyId(int id){
+    public static Category findCategorybyId(int id){
         for(Category cat : category){
             if(cat.getId() == id){
                 return cat;

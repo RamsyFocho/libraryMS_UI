@@ -165,6 +165,7 @@
                               </Label>
                               <TextField fx:id="txtQty" layoutX="32.0" layoutY="333.0" prefHeight="37.0" prefWidth="222.0" promptText="Enter the quantity" />
                               <Button fx:id="btnInsertBook" layoutX="42.0" layoutY="422.0" mnemonicParsing="false" onAction="#onClickAddBook" prefHeight="43.0" prefWidth="203.0" style="-fx-border-radius: 53%;" text="Insert" />
+                              <Button fx:id="btnUpdateBook" layoutX="42.0" layoutY="483.0" mnemonicParsing="false" onAction="#onClickUpdateBook" prefHeight="43.0" prefWidth="203.0" style="-fx-border-radius: 53%;" text="Update" />
                            </children>
                         </Pane>
                      </children>
@@ -178,7 +179,7 @@
                             <!-- Table Section for Leased Books -->
                             <TableView fx:id="leasedTable" layoutX="279.0" prefHeight="566.0" prefWidth="650.0" style="-fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 10;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="279.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
                                 <columns>
-                              <TableColumn fx:id="leasedBookColumn2" prefWidth="150.0" text="Id" />
+                              <TableColumn fx:id="leasedBookColumnId" prefWidth="150.0" text="Id" />
                                     <TableColumn fx:id="leasedBookColumn" prefWidth="150.0" text="Book Name" />
                                     <TableColumn fx:id="leasedUserColumn" prefWidth="150.0" text="User" />
                                     <TableColumn fx:id="leasedLeaseDateColumn" prefWidth="100.0" text="Lease Date" />
@@ -193,16 +194,16 @@
                                     <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Leasing Details" />
 
                                     <Label style="-fx-font-size: 16px;" text="Book Name:" />
-                                    <TextField fx:id="bookNameField" prefHeight="31.0" prefWidth="277.0" promptText="Enter Book Name" />
+                              <ComboBox fx:id="cmbBookName" prefHeight="34.0" prefWidth="229.0" promptText="choose book" />
 
                                     <Label style="-fx-font-size: 16px;" text="User Name:" />
                                     <TextField fx:id="userNameField" prefHeight="32.0" prefWidth="277.0" promptText="Enter User Name" />
 
                                     <Label style="-fx-font-size: 16px;" text="Lease Date:" />
-                                    <DatePicker fx:id="leaseDatePicker" />
+                                    <DatePicker fx:id="leaseDatePicker" promptText="choose lease date" />
 
                                     <Label style="-fx-font-size: 16px;" text="Due Date:" />
-                                    <DatePicker fx:id="dueDatePicker" />
+                                    <DatePicker fx:id="dueDatePicker" promptText="choose Due date" />
 
                                     <Label style="-fx-font-size: 16px;" text="Status:" />
                                     <ComboBox fx:id="statusComboBox" promptText="Select Status">

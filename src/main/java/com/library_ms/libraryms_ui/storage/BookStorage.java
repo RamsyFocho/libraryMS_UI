@@ -13,12 +13,13 @@ public class BookStorage {
     }
 
     public static void addBook(Book book){
-        books.add(book);
+         books.add(book);
+
         if(book!=null){
             System.out.println("Book recorded");
         }
     }
-    public Book findBookbyId(int id){
+    public static Book findBookbyId(int id){
         for(Book bk : books){
             if(bk.getId() == id){
                 return bk;
@@ -27,7 +28,7 @@ public class BookStorage {
         return null;
     }
     //    update
-    public boolean updateBook(int id,String bookName,Category cat, int quantity){
+    public static boolean updateBook(int id, String bookName, Category cat, int quantity){
         Book book = findBookbyId(id);
         System.out.println(id);
         if(book != null){
@@ -38,7 +39,7 @@ public class BookStorage {
             return true;
         }
         else{
-            System.out.println("category with id not found");
+            System.out.println("book with id not found");
             return false;
         }
     }
